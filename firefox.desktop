@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=firefox -kiosk --new-tab http://localhost:8080/webvisu.htm
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=Firefox
+Name=Firefox
+Comment[en_US]=Start Firefox in kiosk mode
+Comment=Start Firefox in kiosk mode

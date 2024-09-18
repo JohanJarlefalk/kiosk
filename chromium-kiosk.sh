@@ -32,7 +32,7 @@ FLAGS="--kiosk $URL \
        --single-process"
 
 # Log file (optional)
-LOGFILE=/home/christ/kiosk/chromium-kiosk.log
+LOGFILE=/home/christ/chromium-kiosk.log
 
 # Loop to restart Chromium if it crashes
 while true

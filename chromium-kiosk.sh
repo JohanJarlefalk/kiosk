@@ -16,7 +16,7 @@ CHROME=/usr/bin/chromium-browser
 # URL to load
 URL="http://localhost:8080/webvisu.htm"
 
-# Chromium flags
+# Chromium flags optimized for performance
 FLAGS="--kiosk $URL \
        --noerrdialogs \
        --disable-infobars \
@@ -31,12 +31,16 @@ FLAGS="--kiosk $URL \
        --disable-default-apps \
        --no-first-run \
        --incognito \
-       --disable-gpu \
-       --fast \
-       --single-process \
        --ozone-platform=x11 \
        --enable-logging=stderr \
-       --log-level=0"
+       --log-level=0 \
+       --disable-speech-api \
+       --disable-webgl \
+       --disable-background-timer-throttling \
+       --disable-backgrounding-occluded-windows \
+       --disable-plugins \
+       --disable-pinch \
+       --disable-features=TranslateUI"
 
 # Log file path
 LOGFILE=/home/christ/kiosk/chromium-kiosk.log

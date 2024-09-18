@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=chromium-browser --kiosk http://localhost:8080/webvisu.htm
+Exec=/home/youruser/kiosk/chromium-kiosk.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name[en_US]=chromium-browser
-Name=chromium-browser
-Comment[en_US]=Start chromium in kiosk mode
-Comment=Start chromium in kiosk mode
+Name[en_US]=Chromium Kiosk
+Name=Chromium Kiosk
+Comment[en_US]=Start Chromium in kiosk mode without popups
+Comment=Start Chromium in kiosk mode without popups

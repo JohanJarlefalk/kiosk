@@ -35,7 +35,6 @@ FLAGS="--kiosk $URL \
        --enable-logging=stderr \
        --log-level=0 \
        --disable-speech-api \
-       --disable-webgl \
        --disable-background-timer-throttling \
        --disable-backgrounding-occluded-windows \
        --disable-plugins \

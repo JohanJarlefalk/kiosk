@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# Set DISPLAY environment variable
-export DISPLAY=:0
+# Log start of script
+echo "$(date): Chromium Kiosk script started." >> /home/christ/kiosk/chromium-kiosk.log
 
-# Optional: Set XAUTHORITY if your system requires it
-# export XAUTHORITY=/home/christ/.Xauthority
+# Set environment variables
+export DISPLAY=:0
+export XAUTHORITY=/home/christ/.Xauthority  # Uncomment if required
+
+# Optional: Add a delay to ensure the graphical session is ready
+sleep 5
 
 # Path to Chromium executable
 CHROME=/usr/bin/chromium-browser
@@ -29,16 +33,23 @@ FLAGS="--kiosk $URL \
        --incognito \
        --disable-gpu \
        --fast \
-       --single-process"
+       --single-process \
+       --ozone-platform=x11 \
+       --enable-logging=stderr \
+       --log-level=0"
 
-# Log file (optional)
-LOGFILE=/home/christ/chromium-kiosk.log
+# Log file path
+LOGFILE=/home/christ/kiosk/chromium-kiosk.log
+
+# Ensure the log directory exists
+mkdir -p /home/christ/kiosk
 
 # Loop to restart Chromium if it crashes
 while true
 do
-    echo "$(date): Starting Chromium" >> $LOGFILE
+    echo "$(date): Starting Chromium with URL: $URL" >> $LOGFILE
     $CHROME $FLAGS >> $LOGFILE 2>&1
-    echo "$(date): Chromium crashed. Restarting in 2 seconds..." >> $LOGFILE
+    EXIT_CODE=$?
+    echo "$(date): Chromium exited with code $EXIT_CODE. Restarting in 2 seconds..." >> $LOGFILE
     sleep 2  # Wait before restarting
 done

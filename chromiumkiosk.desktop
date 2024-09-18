@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/christ/chromium-kiosk.shchromium-kiosk.sh
+Exec=/home/christ/chromium-kiosk.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name[en_US]=Chromium Kiosk
 Name=Chromium Kiosk
-Comment[en_US]=Start Chromium in kiosk mode without popups
+Name[en_US]=Chromium Kiosk
 Comment=Start Chromium in kiosk mode without popups
+Comment[en_US]=Start Chromium in kiosk mode without popups

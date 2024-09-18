@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=/home/youruser/kiosk/chromium-kiosk.sh
+Exec=/home/christ/kiosk/chromium-kiosk.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true

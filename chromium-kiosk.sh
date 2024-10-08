@@ -4,7 +4,10 @@
 echo "$(date): Chromium Kiosk script started." >> /home/christ/kiosk/chromium-kiosk.log
 
 # Set CPU governor to "performance" for all available cores (requires root privileges)
-echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
+echo "performance" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo "performance" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+echo "performance" > /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor
+echo "performance" > /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor
 
 # Set environment variables
 export DISPLAY=:0

@@ -3,6 +3,9 @@
 # Log start of script
 echo "$(date): Chromium Kiosk script started." >> /home/christ/kiosk/chromium-kiosk.log
 
+# Set CPU governor to "performance" for all available cores (requires root privileges)
+echo "performance" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor > /dev/null
+
 # Set environment variables
 export DISPLAY=:0
 export XAUTHORITY=/home/christ/.Xauthority  # Uncomment if required

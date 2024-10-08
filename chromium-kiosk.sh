@@ -8,7 +8,7 @@ export DISPLAY=:0
 export XAUTHORITY=/home/christ/.Xauthority  # Uncomment if required
 
 # Optional: Add a delay to ensure the graphical session is ready
-sleep 5
+sleep 10
 
 # Path to Chromium executable
 CHROME=/usr/bin/chromium-browser
@@ -19,6 +19,7 @@ URL="http://localhost:8080/webvisu.htm"
 # Chromium flags optimized for performance
 FLAGS="--kiosk $URL \
        --noerrdialogs \
+       --password-store=basic \
        --disable-infobars \
        --disable-session-crashed-bubble \
        --disable-restore-session-state \
